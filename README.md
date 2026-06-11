@@ -1,4 +1,5 @@
-# Whatsapp-SMS or wa-sms-bridge
+# wa-sms-bridge
+
 > **Your WhatsApp, on any dumbphone.** Read and reply to WhatsApp over plain SMS — no smartphone, no data plan, no app. Just a SIM, a USB modem, and a Linux box.
 
 ![Node.js](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js&logoColor=white)

@@ -1,0 +1,17 @@
+[Unit]
+Description=WhatsApp <-> SMS Bridge
+After=network-online.target gammu-smsd.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Troque "seu_usuario" pelo usuário que vai rodar o app
+User=seu_usuario
+WorkingDirectory=/opt/wa-sms-bridge
+EnvironmentFile=/opt/wa-sms-bridge/.env
+ExecStart=/usr/bin/node /opt/wa-sms-bridge/index.js
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

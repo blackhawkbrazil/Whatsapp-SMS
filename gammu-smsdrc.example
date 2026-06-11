@@ -1,0 +1,25 @@
+# Exemplo de /etc/gammu-smsdrc
+# Ajuste "device" para a porta do seu modem (rode: gammu-detect)
+
+[gammu]
+device = /dev/ttyUSB0
+connection = at
+# Se o modem pedir PIN, descomente e ajuste:
+# pin = 1234
+
+[smsd]
+service = files
+logfile = /var/log/gammu-smsd.log
+debuglevel = 1
+
+# Script disparado a cada SMS recebido:
+RunOnReceive = /opt/wa-sms-bridge/on_receive.sh
+
+# Diretórios de spool (o usuário do app precisa poder escrever no outbox)
+inboxpath = /var/spool/gammu/inbox/
+outboxpath = /var/spool/gammu/outbox/
+sentsmspath = /var/spool/gammu/sent/
+errorsmspath = /var/spool/gammu/error/
+
+# Repassa as variáveis de ambiente do SMS para o RunOnReceive
+# (gammu já faz isso por padrão; mantido aqui só como referência)
